@@ -1478,6 +1478,8 @@ static int rtw_net_set_mac_address(struct net_device *pnetdev, void *addr)
 
 	_rtw_memcpy(adapter_mac_addr(padapter), sa->sa_data, ETH_ALEN); /* set mac addr to adapter */
 	_rtw_memcpy(pnetdev->dev_addr, sa->sa_data, ETH_ALEN); /* set mac addr to net_device */
+	//added by BrianSune
+	_rtw_memcpy(pnetdev->dev_addr_shadow, sa->sa_data, ETH_ALEN); /* set mac addr to net_device */
 
 #if 0
 	if (rtw_is_hw_init_completed(padapter)) {
